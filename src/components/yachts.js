@@ -7,7 +7,7 @@ const Yachts = () => {
   const dispatch = useDispatch();
   const yachts = useSelector((store) => store.yachts);
 
-  console.log(yachts[0]?.[1].description);
+  // console.log(yachts[0]?.[1]);
 
   useEffect(() => {
     dispatch(getYachtsThunk());
@@ -19,16 +19,23 @@ const Yachts = () => {
         <h1>Hello there!</h1>
       </div>
 
-      {/* {yachts[0]?.[1].map((arr) => {
-        // const values = Object.values(arr.description);
-        const description = arr;
+      {yachts[0]?.map((arr) => {
+        const { description } = arr;
+        const extraPersonFee = arr.extra_person_fee;
+        const { insurence } = arr;
+        const maxTime = arr.max_time;
+        const pricePerHour = arr.price_per_hour;
 
         return (
-          <div key={uuidv4()}>
+          <ul key={uuidv4()}>
             <li>{description}</li>
-          </div>
+            <li>{extraPersonFee}</li>
+            <li>{insurence}</li>
+            <li>{maxTime}</li>
+            <li>{pricePerHour}</li>
+          </ul>
         );
-      })} */}
+      })}
     </>
   );
 };
