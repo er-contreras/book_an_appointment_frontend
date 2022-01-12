@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { getYachtsThunk } from './apiManager';
 
-const Yachts = () => {
+const Home = () => {
   const dispatch = useDispatch();
   const yachts = useSelector((store) => store.yachts);
 
@@ -40,4 +40,4 @@ const Yachts = () => {
   );
 };
 
-export default Yachts;
+export default Home;
