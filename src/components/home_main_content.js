@@ -1,8 +1,9 @@
 // import { useEffect } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 // import { getYachtsThunk } from './apiManager';
 import '../styles/Home.css';
+import yachts from './data';
 
 const HomeMainContent = () => { // eslint-disable-line
   // const dispatch = useDispatch();
@@ -22,33 +23,17 @@ const HomeMainContent = () => { // eslint-disable-line
       </div>
 
       <div id="yachts-content">
-        <div className="items">
-          <h2>YACHTS 1</h2>
-          <p>One of the most beutifule yachts that have you ever seen in yopur lonely live.</p>
-          <ul className="yachts-social-media">
-            <li>F</li>
-            <li>T</li>
-            <li>I</li>
-          </ul>
-        </div>
-        <div className="items">
-          <h2>YACHTS 2</h2>
-          <p>One of the most beutifule yachts that have you ever seen in yopur lonely live.</p>
-          <ul className="yachts-social-media">
-            <li>F</li>
-            <li>T</li>
-            <li>I</li>
-          </ul>
-        </div>
-        <div className="items">
-          <h2>YACHTS 3</h2>
-          <p>One of the most beutifule yachts that have you ever seen in yopur lonely live.</p>
-          <ul className="yachts-social-media">
-            <li>F</li>
-            <li>T</li>
-            <li>I</li>
-          </ul>
-        </div>
+        {yachts.map((obj) => (
+          <div className="items" key={uuidv4()}>
+            <h2>{obj.name}</h2>
+            <p>{obj.description}</p>
+            <ul className="yachts-social-media">
+              <li>F</li>
+              <li>T</li>
+              <li>I</li>
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );
