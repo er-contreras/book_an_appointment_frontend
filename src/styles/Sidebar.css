@@ -1,13 +1,33 @@
-#sidebar-page {
-  border: 1px solid gray;
+#sidebar-content {
+  border-right: 1px solid hsl(0, 0%, 89%);
+  min-height: 100%;
+  min-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-title {
+  margin: 2rem 0 -20rem 0;
 }
 
 .navigation-panel {
-  margin: 1rem 0;
+  margin: 0;
 }
 
 .bottom-panel {
-  margin: 1rem 0;
+  margin: 0 0 2rem 0;
+}
+
+.navigation-panel li {
+  list-style-type: none;
+  margin: 1rem;
+}
+
+
+.bottom-panel li {
+  list-style-type: none;
 }
 
 .icons-panel {
