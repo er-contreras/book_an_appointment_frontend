@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { getYachtsThunk } from './apiManager';
+import Sidebar from './sidebar';
+import '../styles/Home.css';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -14,7 +16,8 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <div id="home-page">
+      <Sidebar />
       <div>
         <h1>Hello there!</h1>
       </div>
@@ -36,7 +39,7 @@ const Home = () => {
           </ul>
         );
       })}
-    </>
+    </div>
   );
 };
 
