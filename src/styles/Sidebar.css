@@ -1,0 +1,15 @@
+#sidebar-page {
+  border: 1px solid gray;
+}
+
+.navigation-panel {
+  margin: 1rem 0;
+}
+
+.bottom-panel {
+  margin: 1rem 0;
+}
+
+.icons-panel {
+  display: flex;
+}

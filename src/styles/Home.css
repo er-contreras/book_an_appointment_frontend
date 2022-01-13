@@ -1,24 +1,9 @@
 #home-page {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   justify-content: space-between;
-  margin: 3rem;
+  margin: 1rem 0;
   flex-direction: row;
-}
-
-#sidebar-page {
-  border: 1px solid gray;
-}
-
-.navigation-panel {
-  margin: 1rem 0;
-}
-
-.bottom-panel {
-  margin: 1rem 0;
-}
-
-.icons-panel {
-  display: flex;
+  background-color: white;
+  width: 95%;
 }
