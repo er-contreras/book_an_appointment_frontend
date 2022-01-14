@@ -25,6 +25,7 @@ const HomeMainContent = () => { // eslint-disable-line
       <div id="yachts-content">
         {yachts.map((obj) => (
           <div className="items" key={uuidv4()}>
+            <img className="image" alt="yacht" src={obj.image} />
             <h2>{obj.name}</h2>
             <p>{obj.description}</p>
             <ul className="yachts-social-media">
