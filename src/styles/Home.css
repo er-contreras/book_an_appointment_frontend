@@ -39,3 +39,8 @@
   background-repeat: no-repeat;
   background-size: 10rem;
 }
+
+.link-to-details {
+  text-decoration: none;
+  color: black;
+}

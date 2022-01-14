@@ -1,4 +1,4 @@
-import Sidebar from './sidebar';
+import Sidebar from '../sidebar';
 import DetailsContent from './details_content';
 
 const Details = () => (
