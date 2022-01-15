@@ -25,16 +25,15 @@ const HomeMainContent = () => { // eslint-disable-line
 
       <div id="yachts-content">
         {yachts.map((obj) => (
-          <Link
-            key={uuidv4()}
-            className="link-to-details"
-            to="/details"
-            state={{
-              image: obj.image,
-              name: obj.name,
-            }}
-          >
-            <div className="items">
+          <div className="items" key={uuidv4()}>
+            <Link
+              className="link-to-details"
+              to="/details"
+              state={{
+                image: obj.image,
+                name: obj.name,
+              }}
+            >
               <img className="image" alt="yacht" src={obj.image} />
               <h2>{obj.name}</h2>
               <p>{obj.description}</p>
@@ -43,8 +42,8 @@ const HomeMainContent = () => { // eslint-disable-line
                 <li>T</li>
                 <li>I</li>
               </ul>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))}
       </div>
     </div>

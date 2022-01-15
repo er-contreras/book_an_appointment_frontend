@@ -19,44 +19,44 @@ const DetailsContent = () => { // eslint-disable-line
   // UseLocation ------------->
   const location = useLocation();
   const currentYacht = location.state;
-  // console.log(location);
-  // const currentYachtImage = currentYacht.image;
 
   return (
     <div id="details-content">
-      <img alt="current yacht" src={currentYacht.image} />
-      <div>
+      <div className="yacht-details">
+        <img className="yacht-image" alt="current yacht" src={currentYacht.image} />
         <div>
-          <h2>YACHT 1</h2>
-          <p>- $350 deposit upon any Yacht purchase†</p>
-        </div>
-        <div>
-          <p>
-            Price Per Hour
-            <span>$129</span>
-          </p>
-          <p>
-            Max Time
-            <span>$249</span>
-          </p>
-          <p>
-            Insurence
-            <span>$1</span>
-          </p>
-          <p>
-            Extra person fee
-            <span>$1000</span>
-          </p>
-        </div>
-        <Link
-          to={{
-            pathname: '/home',
-          }}
-        >
           <div>
-            Reserve
+            <h2>{currentYacht.name}</h2>
+            <p>- $350 deposit upon any Yacht purchase†</p>
           </div>
-        </Link>
+          <div>
+            <p>
+              Price Per Hour
+              <span>$129</span>
+            </p>
+            <p>
+              Max Time
+              <span>$249</span>
+            </p>
+            <p>
+              Insurence
+              <span>$1</span>
+            </p>
+            <p>
+              Extra person fee
+              <span>$1000</span>
+            </p>
+          </div>
+          <Link
+            to={{
+              pathname: '/home',
+            }}
+          >
+            <div>
+              Reserve
+            </div>
+          </Link>
+        </div>
       </div>
       <Link
         to={{
