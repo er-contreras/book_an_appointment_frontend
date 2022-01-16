@@ -1,7 +1,7 @@
 #sidebar-content {
   border-right: 1px solid hsl(0, 0%, 89%);
   min-height: 100%;
-  min-width: 20rem;
+  min-width: 18rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9,11 +9,14 @@
 }
 
 .navigation-title {
-  margin: 2rem 0 -20rem 0;
+  margin: 5rem 0 -8rem 0;
+  font-family: fantasy;
+  font-size: 3rem;
 }
 
 .navigation-panel {
   margin: 0;
+  width: 100%;
 }
 
 .bottom-panel {
@@ -22,7 +25,10 @@
 
 .navigation-panel li {
   list-style-type: none;
-  margin: 1rem;
+  margin: 0 0 0 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .bottom-panel li {
@@ -31,4 +37,13 @@
 
 .icons-panel {
   display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
+
+.yachts-background {
+  background-color: rgb(149, 191, 32);
+  color: white;
 }
