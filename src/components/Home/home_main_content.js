@@ -41,11 +41,11 @@ const HomeMainContent = () => { // eslint-disable-line
               <div className="dots" />
               <h2>{obj.name}</h2>
               <p>{obj.description}</p>
-              <ul className="yachts-social-media">
+              <div className="yachts-social-media">
                 <FontAwesomeIcon className="content-icon" icon={faFacebook} />
                 <FontAwesomeIcon className="content-icon" icon={faTwitter} />
                 <FontAwesomeIcon className="content-icon" icon={faInstagram} />
-              </ul>
+              </div>
             </Link>
           </div>
         ))}
