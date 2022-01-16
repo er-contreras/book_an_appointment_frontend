@@ -4,22 +4,30 @@
   background-color: white;
   width: 95%;
   margin: 1rem 0;
+  font-family: sans-serif;
 }
 
 #home-main-content {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 }
 
 #yachts-title {
-  margin: 6rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 6rem 0;
+  font-size: 2rem;
+}
+
+#yachts-title p {
+  color: rgb(195, 195, 195);
 }
 
 #yachts-content {
   display: flex;
-  max-width: 70%;
-  margin: 0 auto;
 }
 
 .items {
@@ -43,4 +51,28 @@
 .link-to-details {
   text-decoration: none;
   color: black;
+  text-align: center;
+}
+
+.link-to-details h2 {
+  margin: 1rem 0;
+}
+
+.link-to-details p {
+  color: rgb(185, 185, 185);
+  margin: 1rem 0;
+}
+
+.content-icon {
+  border: 2px solid rgb(205, 205, 205);
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: rgb(185, 185, 185);
+  font-size: 2.5rem;
+}
+
+.dots {
+  border: 2px dotted rgb(207, 207, 207);
+  width: 15rem;
+  margin: 2rem auto;
 }

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 // import { getYachtsThunk } from './apiManager';
 import '../../styles/Home.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import yachts from '../data';
 
 const HomeMainContent = () => { // eslint-disable-line
@@ -21,6 +23,7 @@ const HomeMainContent = () => { // eslint-disable-line
       <div id="yachts-title">
         <h1>LATEST YACHTS</h1>
         <p>Please select a Yacht</p>
+        <div className="dots" />
       </div>
 
       <div id="yachts-content">
@@ -35,12 +38,13 @@ const HomeMainContent = () => { // eslint-disable-line
               }}
             >
               <img className="image" alt="yacht" src={obj.image} />
+              <div className="dots" />
               <h2>{obj.name}</h2>
               <p>{obj.description}</p>
               <ul className="yachts-social-media">
-                <li>F</li>
-                <li>T</li>
-                <li>I</li>
+                <FontAwesomeIcon className="content-icon" icon={faFacebook} />
+                <FontAwesomeIcon className="content-icon" icon={faTwitter} />
+                <FontAwesomeIcon className="content-icon" icon={faInstagram} />
               </ul>
             </Link>
           </div>
