@@ -1,14 +1,83 @@
 #details-content {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .yacht-details {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  min-height: 50vh;
+}
+
+.yacht-image-content {
+  display: flex;
+  align-items: center;
 }
 
 .yacht-image {
-  width: 40vw;
+  width: 30rem;
+  height: 20rem;
+}
+
+.details {
+  min-width: 30rem;
+
+}
+
+.details-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.details h2 {
+  font-size: 3rem;
+}
+
+.details-title h2,
+.details-title p {
+  margin: 0.5rem 0;
+}
+
+.costs p {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+.reserve-content {
+  display: flex;
+  justify-content: end;
+  margin: 4rem 0 0 0;
+}
+
+.reserve-link {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  background-color: rgb(149, 191, 32);
+  border-radius: 50px;
+  width: 50%;
+}
+
+.reserve-link a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.back-home {
+  width: 5rem;
+  margin: 4rem 0 0 0;
+  font-size: 4rem;
+  background-color: rgb(149, 191, 32);
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.back-home a {
+  color: white;
+  margin-left: 2rem;
 }

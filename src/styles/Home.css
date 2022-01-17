@@ -25,6 +25,7 @@
 .link-to-details p {
   color: rgb(185, 185, 185);
   margin: 1rem 0;
+  padding: 0 2rem;
 }
 
 #yachts-title p {
@@ -49,10 +50,9 @@
 }
 
 .image {
-  width: 80%;
-  height: 40%;
-  background-repeat: no-repeat;
-  background-size: 10rem;
+  width: 15rem;
+  height: 10rem;
+  border-radius: 2rem;
 }
 
 .link-to-details {

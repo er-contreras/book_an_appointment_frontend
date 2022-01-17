@@ -5,8 +5,10 @@
 import { Link, useLocation } from 'react-router-dom';
 import '../../styles/Details.css';
 // import yachts from './data';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
 
-const DetailsContent = () => { // eslint-disable-line
+const DetailsContent = () => {
   // const dispatch = useDispatch();
   // const yachts = useSelector((store) => store.yachts);
 
@@ -23,13 +25,15 @@ const DetailsContent = () => { // eslint-disable-line
   return (
     <div id="details-content">
       <div className="yacht-details">
-        <img className="yacht-image" alt="current yacht" src={currentYacht.image} />
-        <div>
-          <div>
+        <div className="yacht-image-content">
+          <img className="yacht-image" alt="current yacht" src={currentYacht.image} />
+        </div>
+        <div className="details">
+          <div className="details-title">
             <h2>{currentYacht.name}</h2>
             <p>- $350 deposit upon any Yacht purchase†</p>
           </div>
-          <div>
+          <div className="costs">
             <p>
               Price Per Hour
               <span>$129</span>
@@ -47,26 +51,29 @@ const DetailsContent = () => { // eslint-disable-line
               <span>$1000</span>
             </p>
           </div>
-          <Link
-            to={{
-              pathname: '/home',
-            }}
-          >
-            <div>
-              Reserve
+
+          <div className="reserve-content">
+            <div className="reserve-link">
+              <Link
+                to={{
+                  pathname: '/home',
+                }}
+              >
+                Reserve
+              </Link>
             </div>
-          </Link>
+          </div>
         </div>
       </div>
-      <Link
-        to={{
-          pathname: '/home',
-        }}
-      >
-        <div>
-          HOME
-        </div>
-      </Link>
+      <div className="back-home">
+        <Link
+          to={{
+            pathname: '/home',
+          }}
+        >
+          <FontAwesomeIcon icon={faCaretLeft} />
+        </Link>
+      </div>
     </div>
   );
 };
