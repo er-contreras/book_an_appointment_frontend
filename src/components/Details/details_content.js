@@ -23,58 +23,63 @@ const DetailsContent = () => {
   const currentYacht = location.state;
 
   return (
-    <div id="details-content">
-      <div className="yacht-details">
-        <div className="yacht-image-content">
-          <img className="yacht-image" alt="current yacht" src={currentYacht.image} />
-        </div>
-        <div className="details">
-          <div className="details-title">
-            <h2>{currentYacht.name}</h2>
-            <p>- $350 deposit upon any Yacht purchase†</p>
-          </div>
-          <div className="costs">
-            <p>
-              Price Per Hour
-              <span>$129</span>
-            </p>
-            <p>
-              Max Time
-              <span>$249</span>
-            </p>
-            <p>
-              Insurence
-              <span>$1</span>
-            </p>
-            <p>
-              Extra person fee
-              <span>$1000</span>
-            </p>
-          </div>
+    <>
+      <div id="details-content">
+        <div className="image-details">
+          <div className="yacht-details">
+            <div className="yacht-image-content">
+              <img className="yacht-image" alt="current yacht" src={currentYacht.image} />
+            </div>
+            <div className="details">
+              <div className="details-title">
+                <h2>{currentYacht.name}</h2>
+                <p>- $350 deposit upon any Yacht purchase†</p>
+              </div>
+              <div className="costs">
+                <p>
+                  Price Per Hour
+                  <span>$129</span>
+                </p>
+                <p>
+                  Max Time
+                  <span>$249</span>
+                </p>
+                <p>
+                  Insurence
+                  <span>$1</span>
+                </p>
+                <p>
+                  Extra person fee
+                  <span>$1000</span>
+                </p>
+              </div>
 
-          <div className="reserve-content">
-            <div className="reserve-link">
-              <Link
-                to={{
-                  pathname: '/home',
-                }}
-              >
-                Reserve
-              </Link>
+              <div className="reserve-content">
+                <div className="reserve-link">
+                  <Link
+                    to={{
+                      pathname: '/home',
+                    }}
+                  >
+                    Reserve
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+        <div className="back-home">
+          <Link
+            to={{
+              pathname: '/home',
+            }}
+          >
+            <FontAwesomeIcon icon={faCaretLeft} />
+          </Link>
+        </div>
       </div>
-      <div className="back-home">
-        <Link
-          to={{
-            pathname: '/home',
-          }}
-        >
-          <FontAwesomeIcon icon={faCaretLeft} />
-        </Link>
-      </div>
-    </div>
+    </>
   );
 };
 
