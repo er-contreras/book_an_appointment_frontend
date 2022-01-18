@@ -1,5 +1,5 @@
 import Sidebar from '../sidebar';
-import DetailsContent from './details_content';
+import DetailsContent from './DetailsContent';
 
 const Details = () => (
   <div id="home-page">

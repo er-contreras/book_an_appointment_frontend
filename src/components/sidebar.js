@@ -1,10 +1,10 @@
 import '../styles/Sidebar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import
-{
+import {
   faTwitter, faFacebook, faGooglePlus, faVimeo, faPinterest,
 } from '@fortawesome/free-brands-svg-icons';
 import { faCopyright } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => (
   <div id="sidebar-content">
@@ -16,7 +16,9 @@ const Sidebar = () => (
       <li className="yachts-background">YACHTS</li>
       <li>RESERVE FORM</li>
       <li>MY RESERVATIONS</li>
-      <li>ADD YACHT</li>
+      <Link to="/form">
+        <li>ADD YACHT</li>
+      </Link>
       <li>DELETE YACHT</li>
     </ul>
 
