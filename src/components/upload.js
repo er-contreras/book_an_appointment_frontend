@@ -8,7 +8,7 @@ const Upload = () => {
   const [time, setTime] = useState('');
   const [insurance, setInsurance] = useState('');
   const [fee, setFee] = useState('');
-  const [picture, setPicture] = useState(null); // eslint-disable-line
+  const [picture, setPicture] = useState(null);
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
@@ -45,11 +45,11 @@ const Upload = () => {
     formData.append('fee', fee);
     formData.append('picture', picture);
 
-    axios.post(UPLOAD_URL, formData)
-      .then((res) => {
-        alert('File Upload Success');
+    axios.post(UPLOAD_URL, formData) // eslint-disable-line
+      .then((res) => { // eslint-disable-line
+        alert('File Upload Success'); // eslint-disable-line
       })
-      .catch((err) => alert('File Upload Error'));
+      .catch((err) => alert('File Upload Error')); // eslint-disable-line
   };
 
   const handleFileSelect = (event) => {
