@@ -6,7 +6,12 @@ import { v4 as uuidv4 } from 'uuid';
 import '../../styles/Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+// import { Carousel } from 'react-bootstrap';
+import Slider from 'react-slick';
 import yachts from '../data';
+// import 'bootstrap/dist/css/bootstrap.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const HomeMainContent = () => { // eslint-disable-line
   // const dispatch = useDispatch();
@@ -17,6 +22,13 @@ const HomeMainContent = () => { // eslint-disable-line
   // useEffect(() => {
   //   dispatch(getYachtsThunk());
   // }, []);
+  const settings = {
+    infinite: false,
+    speed: 500,
+    arrows: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
 
   return (
     <div id="home-main-content">
@@ -26,7 +38,7 @@ const HomeMainContent = () => { // eslint-disable-line
         <div className="dots" />
       </div>
 
-      <div id="yachts-content">
+      <Slider {...settings} id="yachts-content">
         {yachts.map((obj) => (
           <div className="items" key={uuidv4()}>
             <Link
@@ -37,19 +49,19 @@ const HomeMainContent = () => { // eslint-disable-line
                 name: obj.name,
               }}
             >
-              <img className="image" alt="yacht" src={obj.image} />
-              <div className="dots" />
-              <h2>{obj.name}</h2>
-              <p>{obj.description}</p>
-              <div className="yachts-social-media">
-                <FontAwesomeIcon className="content-icon" icon={faFacebook} />
-                <FontAwesomeIcon className="content-icon" icon={faTwitter} />
-                <FontAwesomeIcon className="content-icon" icon={faInstagram} />
-              </div>
+              <img alt="yacht" src={obj.image} />
             </Link>
+            <div className="dots" />
+            <h2>{obj.name}</h2>
+            <p>{obj.description}</p>
+            <div className="yachts-social-media">
+              <FontAwesomeIcon className="content-icon" icon={faFacebook} />
+              <FontAwesomeIcon className="content-icon" icon={faTwitter} />
+              <FontAwesomeIcon className="content-icon" icon={faInstagram} />
+            </div>
           </div>
         ))}
-      </div>
+      </Slider>
     </div>
   );
 };
