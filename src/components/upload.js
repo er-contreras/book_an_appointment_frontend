@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import '../styles/form.css';
 
@@ -7,14 +8,52 @@ const Upload = () => {
   const [time, setTime] = useState('');
   const [insurance, setInsurance] = useState('');
   const [fee, setFee] = useState('');
-  // const [picture, setPicture] = useState(null);
+  const [picture, setPicture] = useState(null); // eslint-disable-line
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const formInputs = {
+  //     name, price, time, insurance, fee, picture,
+  //   };
+  //   console.log(formInputs);
+  // };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const formData = new FormData();
+  //   formData.append("picture", picture);
+  //   try {
+  //     const response = await axios({
+  //       method: "post",
+  //       url: "/api/upload/file",
+  //       data: formData,
+  //       headers: { "Content-Type": "multipart/form-data" },
+  //     });
+  //   } catch(error) {
+  //     console.log(error)
+  //   }
+  // }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formInputs = {
-      name, price, time, insurance, fee,
-    };
-    console.log(formInputs);
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('price', price);
+    formData.append('time', time);
+    formData.append('insurance', insurance);
+    formData.append('fee', fee);
+    formData.append('picture', picture);
+
+    axios.post(UPLOAD_URL, formData)
+      .then((res) => {
+        alert('File Upload Success');
+      })
+      .catch((err) => alert('File Upload Error'));
+  };
+
+  const handleFileSelect = (event) => {
+    setPicture(event.target.files[0]);
   };
 
   return (
@@ -70,15 +109,14 @@ const Upload = () => {
             onChange={(e) => setFee(e.target.value)}
           />
         </label>
-        {/* <label htmlFor="yacht-picture">
+        <label htmlFor="yacht-picture">
           Upload an Image
           <input
             id="yacht-picture"
             type="file"
-            value={picture}
-            onChange={(e) => setPicture(e.target.files[0])}
+            onChange={handleFileSelect}
           />
-        </label> */}
+        </label>
         <button type="submit">Submit</button>
       </form>
     </div>
