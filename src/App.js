@@ -9,7 +9,7 @@ import Upload from './components/Upload';
 const App = () => (
   <Routes>
     <Route path="/" element={<Login />} />
-    <Route path="/home" element={<Home />} />
+    <Route path="home" element={<Home />} />
     <Route path="details" element={<Details />} />
     <Route path="form" element={<Upload />} />
 

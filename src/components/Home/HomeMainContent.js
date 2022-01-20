@@ -15,8 +15,6 @@ const HomeMainContent = () => {
   const yachts = useSelector((store) => store.yachts);
   const yachtsObj = yachts[0]?.[1];
 
-  console.log(yachtsObj[0].picture);
-
   useEffect(() => {
     dispatch(getYachtsThunk());
   }, []);
