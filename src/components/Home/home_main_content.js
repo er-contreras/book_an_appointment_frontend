@@ -6,8 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Slider from 'react-slick';
 import { getYachtsThunk } from '../apiManager';
-// import yachts from '../data';
-// import 'bootstrap/dist/css/bootstrap.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../../styles/Home.css';
@@ -17,7 +15,7 @@ const HomeMainContent = () => {
   const yachts = useSelector((store) => store.yachts);
   const yachtsObj = yachts[0]?.[1];
 
-  console.log(yachtsObj);
+  console.log(yachtsObj[0].picture);
 
   useEffect(() => {
     dispatch(getYachtsThunk());
@@ -55,7 +53,7 @@ const HomeMainContent = () => {
                 reserved: obj.reserved,
               }}
             >
-              <img alt="yacht" src={obj} />
+              <img alt="yacht" src={`http://localhost:3000${obj.picture}`} />
             </Link>
             <div className="dots" />
             <h2>{obj.name}</h2>

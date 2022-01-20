@@ -28,7 +28,7 @@ const DetailsContent = () => {
         <div className="image-details">
           <div className="yacht-details">
             <div className="yacht-image-content">
-              <img className="yacht-image" alt="current yacht" src={currentYacht.image} />
+              <img className="yacht-image" alt="current yacht" src={`http://localhost:3000${currentYacht.image}`} />
             </div>
             <div className="details">
               <div className="details-title">
@@ -51,7 +51,7 @@ const DetailsContent = () => {
                   </span>
                 </p>
                 <p>
-                  Insurence
+                  Insurance
                   <span>
                     $
                     {currentYacht.insurance}
