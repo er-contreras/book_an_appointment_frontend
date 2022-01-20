@@ -1,6 +1,7 @@
-import Sidebar from '../sidebar';
+import React from 'react';
+import Sidebar from '../Sidebar';
 import '../../styles/Home.css';
-import HomeMainContent from './home_main_content';
+import HomeMainContent from './HomeMainContent';
 
 const Home = () => (
   <div id="home-page">

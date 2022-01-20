@@ -1,4 +1,5 @@
-import Sidebar from '../sidebar';
+import React from 'react';
+import Sidebar from '../Sidebar';
 import DetailsContent from './DetailsContent';
 
 const Details = () => (

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
-import generateStore from './redux/configureStore';
+import generateStore from './redux/ConfigureStore';
 
 const store = generateStore();
 

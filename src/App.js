@@ -1,15 +1,16 @@
+import React from 'react';
 import './styles/App.css';
 import { Route, Routes } from 'react-router-dom';
-import Home from './components/Home/home';
-import Login from './components/login';
-import Details from './components/Details/details';
-import Upload from './components/upload';
+import Home from './components/Home/Home';
+import Login from './components/Login';
+import Details from './components/Details/Details';
+import Upload from './components/Upload';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="home" element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="details" element={<Details />} />
       <Route path="form" element={<Upload />} />
 

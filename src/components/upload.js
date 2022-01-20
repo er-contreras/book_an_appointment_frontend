@@ -1,6 +1,6 @@
 // import axios from 'axios';
-import { useState } from 'react';
-import '../styles/form.css';
+import React, { useState } from 'react';
+import '../styles/Form.css';
 
 const Upload = () => {
   const [name, setName] = useState('');

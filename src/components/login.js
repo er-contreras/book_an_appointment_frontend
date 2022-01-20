@@ -17,22 +17,6 @@ export default function Login() {
           <p>Username</p>
           <input type="text" id="username" />
         </label>
-
-        {/* <label htmlFor="username">
-          <p>Username</p>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </label> */}
-
-        {/* <label htmlFor="password">
-          <p>Password</p>
-          <input type="password" id="password" />
-        </label> */}
-
         <Link to="/home">
           <button type="submit">Login</button>
         </Link>
