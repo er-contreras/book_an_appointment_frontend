@@ -1,27 +1,28 @@
-// import { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-// import { getYachtsThunk } from './apiManager';
-import '../../styles/Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-// import { Carousel } from 'react-bootstrap';
 import Slider from 'react-slick';
-import yachts from '../data';
+import { getYachtsThunk } from '../apiManager';
+// import yachts from '../data';
 // import 'bootstrap/dist/css/bootstrap.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import '../../styles/Home.css';
 
-const HomeMainContent = () => { // eslint-disable-line
-  // const dispatch = useDispatch();
-  // const yachts = useSelector((store) => store.yachts);
+const HomeMainContent = () => {
+  const dispatch = useDispatch();
+  const yachts = useSelector((store) => store.yachts);
+  const yachtsObj = yachts[0]?.[1];
 
-  // console.log(yachts[0]?.[1]);
+  console.log(yachtsObj);
 
-  // useEffect(() => {
-  //   dispatch(getYachtsThunk());
-  // }, []);
+  useEffect(() => {
+    dispatch(getYachtsThunk());
+  }, []);
+
   const settings = {
     infinite: false,
     speed: 500,
@@ -39,17 +40,22 @@ const HomeMainContent = () => { // eslint-disable-line
       </div>
 
       <Slider {...settings} id="yachts-content">
-        {yachts.map((obj) => (
+        {yachtsObj?.map((obj) => (
           <div className="items" key={uuidv4()}>
             <Link
               className="link-to-details"
               to="/details"
               state={{
-                image: obj.image,
+                image: obj.picture,
                 name: obj.name,
+                pricePerHour: obj.price_per_hour,
+                extraPersonFee: obj.extra_person_fee,
+                insurance: obj.insurance,
+                maxTime: obj.max_time,
+                reserved: obj.reserved,
               }}
             >
-              <img alt="yacht" src={obj.image} />
+              <img alt="yacht" src={obj} />
             </Link>
             <div className="dots" />
             <h2>{obj.name}</h2>

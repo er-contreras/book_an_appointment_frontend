@@ -38,19 +38,31 @@ const DetailsContent = () => {
               <div className="costs">
                 <p>
                   Price Per Hour
-                  <span>$129</span>
+                  <span>
+                    $
+                    {currentYacht.pricePerHour}
+                  </span>
                 </p>
                 <p>
                   Max Time
-                  <span>$249</span>
+                  <span>
+                    $
+                    {currentYacht.maxTime}
+                  </span>
                 </p>
                 <p>
                   Insurence
-                  <span>$1</span>
+                  <span>
+                    $
+                    {currentYacht.insurance}
+                  </span>
                 </p>
                 <p>
                   Extra person fee
-                  <span>$1000</span>
+                  <span>
+                    $
+                    {currentYacht.extraPersonFee}
+                  </span>
                 </p>
               </div>
 

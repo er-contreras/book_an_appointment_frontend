@@ -1,7 +1,7 @@
 import { getYachts } from '../redux/yachts/yachts';
 
 const fetchYachts = async () => {
-  const url = 'http://localhost:3000/api/v1/yachts/index';
+  const url = 'http://localhost:3000/api/v1/yachts';
 
   const response = await fetch(url);
   const details = await response.json();
