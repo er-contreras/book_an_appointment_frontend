@@ -9,10 +9,12 @@ const rootReducer = combineReducers({
   yachts: yachtsReducer,
 });
 
-export default function generateStore() {
+const generateStore = () => {
   const store = createStore(
     rootReducer,
     applyMiddleware(logger, thunk),
   );
   return store;
-}
+};
+
+export default generateStore;

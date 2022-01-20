@@ -6,24 +6,22 @@ import Login from './components/Login';
 import Details from './components/Details/Details';
 import Upload from './components/Upload';
 
-function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="details" element={<Details />} />
-      <Route path="form" element={<Upload />} />
+const App = () => (
+  <Routes>
+    <Route path="/" element={<Login />} />
+    <Route path="/home" element={<Home />} />
+    <Route path="details" element={<Details />} />
+    <Route path="form" element={<Upload />} />
 
-      <Route
-        path="*"
-        element={(
-          <main style={{ padding: '1rem', fontSize: '6rem' }}>
-            <p>Theres nothing here!</p>
-          </main>
-        )}
-      />
-    </Routes>
-  );
-}
+    <Route
+      path="*"
+      element={(
+        <main style={{ padding: '1rem', fontSize: '6rem' }}>
+          <p>Theres nothing here!</p>
+        </main>
+      )}
+    />
+  </Routes>
+);
 
 export default App;
