@@ -1,14 +1,15 @@
-// import axios from 'axios';
+import axios from 'axios';
 import React, { useState } from 'react';
 import '../styles/form.css';
 
 const Upload = () => {
   const [name, setName] = useState('');
-  const [price, setPrice] = useState('');
-  const [time, setTime] = useState('');
+  const [price_per_hour, setPrice] = useState('');
+  const [max_time, setTime] = useState('');
   const [insurance, setInsurance] = useState('');
-  const [fee, setFee] = useState('');
+  const [extra_person_fee, setFee] = useState('');
   const [picture, setPicture] = useState(null);
+  const [description, setDescription] = useState('');
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
@@ -39,13 +40,14 @@ const Upload = () => {
 
     const formData = new FormData();
     formData.append('name', name);
-    formData.append('price', price);
-    formData.append('time', time);
+    formData.append('price_per_hour', price_per_hour);
+    formData.append('max_time', max_time);
     formData.append('insurance', insurance);
-    formData.append('fee', fee);
+    formData.append('extra_person_fee', extra_person_fee);
     formData.append('picture', picture);
+    formData.append('description', description);
 
-    axios.post(UPLOAD_URL, formData) // eslint-disable-line
+    axios.post('http://localhost:3000/api/v1/yachts', formData)
       .then((res) => { // eslint-disable-line
         alert('File Upload Success'); // eslint-disable-line
       })
@@ -75,7 +77,7 @@ const Upload = () => {
             id="yacht-price"
             type="text"
             required
-            value={price}
+            value={price_per_hour}
             onChange={(e) => setPrice(e.target.value)}
           />
         </label>
@@ -85,7 +87,7 @@ const Upload = () => {
             id="yacht-time"
             type="text"
             required
-            value={time}
+            value={max_time}
             onChange={(e) => setTime(e.target.value)}
           />
         </label>
@@ -105,8 +107,18 @@ const Upload = () => {
             id="yacht-fee"
             type="text"
             required
-            value={fee}
+            value={extra_person_fee}
             onChange={(e) => setFee(e.target.value)}
+          />
+        </label>
+        <label htmlFor="yacht-fee">
+          Description
+          <input
+            id="yacht-fee"
+            type="text"
+            required
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
         </label>
         <label htmlFor="yacht-picture">
