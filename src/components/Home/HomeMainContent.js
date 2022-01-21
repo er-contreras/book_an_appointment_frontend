@@ -54,8 +54,8 @@ const HomeMainContent = () => {
               <img alt="yacht" src={`http://localhost:3000${obj.picture}`} />
             </Link>
             <div className="dots" />
-            <h2>{obj.name}</h2>
-            <p>{obj.description}</p>
+            <h2 className="y-name">{obj.name}</h2>
+            <p className="y-description">{obj.description}</p>
             <div className="yachts-social-media">
               <FontAwesomeIcon className="content-icon" icon={faFacebook} />
               <FontAwesomeIcon className="content-icon" icon={faTwitter} />
