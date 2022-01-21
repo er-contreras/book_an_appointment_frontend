@@ -3,7 +3,7 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import yachtsReducer from './Yachts/yachts';
+import yachtsReducer from './yachts/yachts';
 
 const rootReducer = combineReducers({
   yachts: yachtsReducer,
