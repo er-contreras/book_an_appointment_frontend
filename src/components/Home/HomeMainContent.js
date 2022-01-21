@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Slider from 'react-slick';
-import { getYachtsThunk } from '../ApiManager';
+import { getYachtsThunk } from '../apiManager';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../../styles/Home.css';

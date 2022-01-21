@@ -1,4 +1,4 @@
-import { getYachts } from '../redux/Yachts/Yachts';
+import { getYachts } from '../redux/Yachts/yachts';
 
 const fetchYachts = async () => {
   const url = 'http://localhost:3000/api/v1/yachts';

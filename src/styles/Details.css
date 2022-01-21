@@ -63,18 +63,28 @@
   margin: 4rem 0 0 0;
 }
 
-.reserve-link {
+.button {
   display: flex;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2rem;
+  padding: 0.5rem;
   background-color: rgb(149, 191, 32);
   border-radius: 50px;
-  width: 50%;
+  width: 70%;
+  color: white;
+  cursor: pointer;
 }
 
-.reserve-link a {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
+.cancel {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  padding: 0.5rem;
+  background-color: rgb(159, 0, 0);
+  border-radius: 50px;
+  width: 70%;
+  color: white;
+  cursor: pointer;
 }
 
 .back-home {

@@ -1,25 +1,12 @@
-import React from 'react';
-// import { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { v4 as uuidv4 } from 'uuid';
-// import { getYachtsThunk } from './apiManager';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../../styles/Details.css';
-// import yachts from './data';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
 
 const DetailsContent = () => {
-  // const dispatch = useDispatch();
-  // const yachts = useSelector((store) => store.yachts);
+  const [reserved, setReserved] = useState(false);
 
-  // console.log(yachts[0]?.[1]);
-
-  // useEffect(() => {
-  //   dispatch(getYachtsThunk());
-  // }, []);
-
-  // UseLocation ------------->
   const location = useLocation();
   const currentYacht = location.state;
 
@@ -68,15 +55,19 @@ const DetailsContent = () => {
               </div>
 
               <div className="reserve-content">
-                <div className="reserve-link">
-                  <Link
-                    to={{
-                      pathname: '/home',
-                    }}
-                  >
-                    Reserve
-                  </Link>
-                </div>
+                <button
+                  className={!reserved === true ? 'button' : 'cancel'}
+                  type="button"
+                  onClick={() => {
+                    if (reserved === true) {
+                      setReserved(false);
+                    } else {
+                      setReserved(true);
+                    }
+                  }}
+                >
+                  {!reserved === true ? 'Reserved Yacht!' : 'Cancel Reservation'}
+                </button>
               </div>
             </div>
           </div>
