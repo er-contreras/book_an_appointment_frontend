@@ -77,3 +77,12 @@
 .slick-next::before {
   color: black !important;
 }
+
+.y-name {
+  font-size: 1.7rem;
+}
+
+.y-description {
+  font-size: 1.5rem;
+  margin-bottom: 2rem !important;
+}

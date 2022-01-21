@@ -3,12 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 import '../../styles/Details.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 const DetailsContent = () => {
-  const [reserved, setReserved] = useState(false);
-
   const location = useLocation();
   const currentYacht = location.state;
+  const [reserved, setReserved] = useState(currentYacht.reserved);
 
   return (
     <>
@@ -58,15 +58,21 @@ const DetailsContent = () => {
                 <button
                   className={!reserved === true ? 'button' : 'cancel'}
                   type="button"
-                  onClick={() => {
-                    if (reserved === true) {
-                      setReserved(false);
-                    } else {
-                      setReserved(true);
-                    }
+                  onClick={async () => {
+                    axios({
+                      method: 'patch',
+                      url: `http://localhost:3000/api/v1/yachts/${currentYacht.name}`,
+
+                    }).then((response) => {
+                      if (response.data.reserved === true) {
+                        setReserved(true);
+                      } else {
+                        setReserved(false);
+                      }
+                    });
                   }}
                 >
-                  {!reserved === true ? 'Reserved Yacht!' : 'Cancel Reservation'}
+                  {!reserved === true ? 'Reserve Yacht!' : 'Cancel Reservation'}
                 </button>
               </div>
             </div>
