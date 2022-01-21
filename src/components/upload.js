@@ -4,54 +4,34 @@ import '../styles/form.css';
 
 const Upload = () => {
   const [name, setName] = useState('');
-  const [price_per_hour, setPrice] = useState('');
-  const [max_time, setTime] = useState('');
+  const [pricePerHour, setPrice] = useState('');
+  const [maxTime, setTime] = useState('');
   const [insurance, setInsurance] = useState('');
-  const [extra_person_fee, setFee] = useState('');
+  const [extraPersonFee, setFee] = useState('');
   const [picture, setPicture] = useState(null);
   const [description, setDescription] = useState('');
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const formInputs = {
-  //     name, price, time, insurance, fee, picture,
-  //   };
-  //   console.log(formInputs);
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append("picture", picture);
-  //   try {
-  //     const response = await axios({
-  //       method: "post",
-  //       url: "/api/upload/file",
-  //       data: formData,
-  //       headers: { "Content-Type": "multipart/form-data" },
-  //     });
-  //   } catch(error) {
-  //     console.log(error)
-  //   }
-  // }
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const formData = new FormData();
     formData.append('name', name);
-    formData.append('price_per_hour', price_per_hour);
-    formData.append('max_time', max_time);
-    formData.append('insurance', insurance);
-    formData.append('extra_person_fee', extra_person_fee);
-    formData.append('picture', picture);
+    formData.append('price_per_hour', pricePerHour);
     formData.append('description', description);
-
-    axios.post('http://localhost:3000/api/v1/yachts', formData)
-      .then((res) => { // eslint-disable-line
-        alert('File Upload Success'); // eslint-disable-line
-      })
-      .catch((err) => alert('File Upload Error')); // eslint-disable-line
+    formData.append('max_time', maxTime);
+    formData.append('insurance', insurance);
+    formData.append('extra_person_fee', extraPersonFee);
+    formData.append('picture', picture);
+    try {
+      const response = axios({
+        method: 'post',
+        url: 'http://localhost:3000/api/v1/yachts',
+        data: formData,
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+      console.log(response); // eslint-disable-line
+    } catch (error) {
+      console.log(error); // eslint-disable-line
+    }
   };
 
   const handleFileSelect = (event) => {
@@ -77,7 +57,7 @@ const Upload = () => {
             id="yacht-price"
             type="text"
             required
-            value={price_per_hour}
+            value={pricePerHour}
             onChange={(e) => setPrice(e.target.value)}
           />
         </label>
@@ -87,7 +67,7 @@ const Upload = () => {
             id="yacht-time"
             type="text"
             required
-            value={max_time}
+            value={maxTime}
             onChange={(e) => setTime(e.target.value)}
           />
         </label>
@@ -107,7 +87,7 @@ const Upload = () => {
             id="yacht-fee"
             type="text"
             required
-            value={extra_person_fee}
+            value={extraPersonFee}
             onChange={(e) => setFee(e.target.value)}
           />
         </label>
