@@ -45,11 +45,12 @@ npm install
 - Linkedin: [LinkedIn](https://www.linkedin.com/in/christian-erick/)
 - Twitter: [@ChristianErick_](https://twitter.com/ChristianErick_)
 
-👤 **Author2**
+👤 **Miguel Tapia**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@meltrust](https://github.com/Meltrust)
+- Twitter: [@MeltrustDVX](https://twitter.com/meltrustDVX)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/Meltrust)
+
 
 ## 🤝 Contributing
 
