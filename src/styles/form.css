@@ -1,0 +1,12 @@
+.yacht-form form {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem 0;
+}
+
+.yacht-form form label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
